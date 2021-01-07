@@ -15,7 +15,7 @@ namespace Membership.Service.interfaces
         Task<ResponseResult<bool>> Update(UserUpdateRequest request);
         Task<ResponseResult<PagedResult<UserVm>>> GetUserPaging(GetUserPagingRequest request);
         Task<ResponseResult<UserVm>> GetById(Guid id);
-        Task<ResponseResult<bool>> Delete(Guid id, RoleAssignRequest request);
-        Task<ResponseResult<bool>> RoleAssign(Guid id, RoleAssignRequest request);
+        Task<ResponseResult<bool>> Delete(Guid id);
+        Task<ResponseResult<bool>> RoleAssign(RoleAssignRequest request);
     }
 }

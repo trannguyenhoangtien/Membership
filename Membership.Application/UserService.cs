@@ -67,7 +67,7 @@ namespace Membership.Service
             }
         }
 
-        public async Task<ResponseResult<bool>> Delete(Guid id, RoleAssignRequest request)
+        public async Task<ResponseResult<bool>> Delete(Guid id)
         {
             try
             {
@@ -163,9 +163,9 @@ namespace Membership.Service
             return new ResponseSuccessResult<bool>();
         }
 
-        public async Task<ResponseResult<bool>> RoleAssign(Guid id, RoleAssignRequest request)
+        public async Task<ResponseResult<bool>> RoleAssign(RoleAssignRequest request)
         {
-            var user = await _userManager.FindByIdAsync(id.ToString());
+            var user = await _userManager.FindByIdAsync(request.Id.ToString());
             if (user == null) return new ResponseErrorResult<bool>("User not exist");
 
             var removeRoles = request.Roles.Where(x => x.Selected == false).Select(x => x.Name).ToList();
