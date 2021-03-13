@@ -30,19 +30,20 @@ namespace Membership.Service
             _roleManager = roleManager;
             _config = config;
         }
-        public async Task<ResponseResult<string>> Authenticate(LoginRequest request)
+        public async Task<ResponseResult<UserAuthenticateVm>> Authenticate(LoginRequest request)
         {
             try
             {
                 var user = await _userManager.FindByNameAsync(request.UserName);
-                if (user == null) return new ResponseErrorResult<string>("Username or Password invalid.");
+                if (user == null) return new ResponseErrorResult<UserAuthenticateVm>("Username or Password invalid.");
 
                 var result = await _signInManager.PasswordSignInAsync(user, request.Password, request.RememberMe, true);
-                if (!result.Succeeded) return new ResponseErrorResult<string>("Username or Password invalid.");
+                if (!result.Succeeded) return new ResponseErrorResult<UserAuthenticateVm>("Username or Password invalid.");
 
                 var roles = await _userManager.GetRolesAsync(user);
                 var claims = new[]
                 {
+                    new Claim("id", user.Id.ToString()),
                     new Claim(ClaimTypes.Email, user.Email),
                     new Claim(ClaimTypes.GivenName, user.FirstName),
                     new Claim(ClaimTypes.Role, string.Join(";", roles)),
@@ -59,11 +60,16 @@ namespace Membership.Service
                     expires: DateTime.Now.AddHours(3),
                     signingCredentials: creds);
 
-                return new ResponseSuccessResult<string>(new JwtSecurityTokenHandler().WriteToken(token));
+                return new ResponseSuccessResult<UserAuthenticateVm>(new UserAuthenticateVm() { 
+                    Token = new JwtSecurityTokenHandler().WriteToken(token),
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Username = user.UserName,
+                });
             }
             catch (Exception ex)
             {
-                return new ResponseErrorResult<string>(ex.Message);
+                return new ResponseErrorResult<UserAuthenticateVm>(ex.Message);
             }
         }
 

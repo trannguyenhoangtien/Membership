@@ -12,7 +12,7 @@ namespace Membership.BackendApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -31,7 +31,7 @@ namespace Membership.BackendApi.Controllers
 
             var result = await _userService.Authenticate(request);
             if (!result.IsSuccess)
-                return BadRequest(result.Message);
+                return BadRequest(result);
 
             return Ok(result.ResultObj);
         }
@@ -77,6 +77,7 @@ namespace Membership.BackendApi.Controllers
         }
 
         [HttpGet("paging")]
+        [Authorize]
         public async Task<IActionResult> GetAllPaging([FromQuery] GetUserPagingRequest request)
         {
             var users = await _userService.GetUserPaging(request);

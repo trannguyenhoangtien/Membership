@@ -8,15 +8,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.BackendApi", "Membership.BackendApi\Membership.BackendApi.csproj", "{9F71A7B8-18CE-4550-97EA-9DAE9D508003}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership.BackendApi", "Membership.BackendApi\Membership.BackendApi.csproj", "{9F71A7B8-18CE-4550-97EA-9DAE9D508003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Data", "Membership.Data\Membership.Data.csproj", "{84EBCED4-B80B-4450-9BD5-8CDFBA88334E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership.Data", "Membership.Data\Membership.Data.csproj", "{84EBCED4-B80B-4450-9BD5-8CDFBA88334E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.ViewModel", "Membership.ViewModel\Membership.ViewModel.csproj", "{9013B14A-78F2-4F55-8BA5-AC20E16EF586}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership.ViewModel", "Membership.ViewModel\Membership.ViewModel.csproj", "{9013B14A-78F2-4F55-8BA5-AC20E16EF586}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Service", "Membership.Application\Membership.Service.csproj", "{36341ED6-CF2C-49D4-944D-881722215B5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership.Service", "Membership.Application\Membership.Service.csproj", "{36341ED6-CF2C-49D4-944D-881722215B5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.Utility", "Membership.Utility\Membership.Utility.csproj", "{E5DDCFCB-E64D-4F47-B076-72EC048726D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership.Utility", "Membership.Utility\Membership.Utility.csproj", "{E5DDCFCB-E64D-4F47-B076-72EC048726D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership.AdminPortal", "Membership.AdminPortal\Membership.AdminPortal.csproj", "{32E1292F-3B62-45D7-B82E-6B5480767CB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.AdminApp", "Membership.AdminApp\Membership.AdminApp.csproj", "{0A3ABE78-F042-4FB8-BC33-256E58E9ECD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +48,14 @@ Global
 		{E5DDCFCB-E64D-4F47-B076-72EC048726D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5DDCFCB-E64D-4F47-B076-72EC048726D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5DDCFCB-E64D-4F47-B076-72EC048726D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32E1292F-3B62-45D7-B82E-6B5480767CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E1292F-3B62-45D7-B82E-6B5480767CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E1292F-3B62-45D7-B82E-6B5480767CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E1292F-3B62-45D7-B82E-6B5480767CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3ABE78-F042-4FB8-BC33-256E58E9ECD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3ABE78-F042-4FB8-BC33-256E58E9ECD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3ABE78-F042-4FB8-BC33-256E58E9ECD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3ABE78-F042-4FB8-BC33-256E58E9ECD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

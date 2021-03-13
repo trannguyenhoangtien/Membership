@@ -10,7 +10,7 @@ namespace Membership.Service.interfaces
 {
     public interface IUserService
     {
-        Task<ResponseResult<string>> Authenticate(LoginRequest request);
+        Task<ResponseResult<UserAuthenticateVm>> Authenticate(LoginRequest request);
         Task<ResponseResult<bool>> Register(RegisterRequest request);
         Task<ResponseResult<bool>> Update(UserUpdateRequest request);
         Task<ResponseResult<PagedResult<UserVm>>> GetUserPaging(GetUserPagingRequest request);
